@@ -1,5 +1,5 @@
 param (
-    [string]$ParameterFile = "C:\samples\AT\VMAlerts\VMAlert-Par.json"
+    [string]$ParameterFile = "C:\AZM Git\Azure-monitoring\Azure-Managed-Services-main\Azure Monitor\AT\VMAlerts\VMAlert-Par.json"
 )
 
 # Load parameters from the parameter file
