@@ -1,0 +1,41 @@
+{
+  "properties": {
+    "dataSources": {
+      "performanceCounters": [
+        {
+          "streams": [
+            "Microsoft-InsightsMetrics"
+          ],
+          "scheduledTransferPeriod": "PT1M",
+          "samplingFrequencyInSeconds": 60,
+          "counterSpecifiers": [
+            "\\VmInsights\\DetailedMetrics"
+          ],
+          "name": "perfCounter01"
+        }
+      ]
+    },
+    "destinations": {
+        "azureMonitorMetrics": {
+          "name": "azureMonitorMetrics-default"
+        },
+        "logAnalytics": [
+          {
+            "name": "logAnalyticsWorkspace",
+            "workspaceResourceId": "/subscriptions/5f37ef86-d323-4d43-b5df-cf17349ab93c/resourceGroups/AZM-SNow/providers/Microsoft.OperationalInsights/workspaces/LAW-AZM-SNOW-AVD-MidCap-prd"
+          }
+        ]
+      },
+      "dataFlows": [
+        {
+          "streams": [
+            "Microsoft-InsightsMetrics"
+          ],
+          "destinations": [
+            "azureMonitorMetrics-default",
+            "logAnalyticsWorkspace"
+          ]
+        }
+      ]
+    }
+  }

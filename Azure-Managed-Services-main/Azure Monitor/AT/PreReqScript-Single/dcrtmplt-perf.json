@@ -1,0 +1,59 @@
+{
+  "properties": {
+    "dataSources": {
+      "performanceCounters": [
+        {
+          "streams": [
+            "Microsoft-Perf",
+            "Microsoft-InsightsMetrics"
+          ],
+          "scheduledTransferPeriod": "PT1M",
+          "samplingFrequencyInSeconds": 60,
+          "counterSpecifiers": [
+            "\\Memory\\% Committed Bytes In Use",
+            "\\Memory(*)\\% Used Memory",
+            "\\System\\System Up Time",
+            "\\Network Interface(*)\\Bytes Total/sec",
+            "\\LogicalDisk(*)\\% Free Space",
+            "\\LogicalDisk(*)\\Free Megabytes",
+            "\\Memory\\Available Bytes",
+            "\\Linux\\System\\Uptime",
+            "\\Linux\\Memory\\% Used Memory",
+            "\\Linux\\Logical Disk\\Free Megabytes",
+            "\\Linux\\Memory\\Available MBytes Memory"
+          ],
+          "name": "perfCounter01"
+        }
+      ]
+    },
+    "destinations": {
+        "azureMonitorMetrics": {
+          "name": "azureMonitorMetrics-default"
+        },
+        "logAnalytics": [
+          {
+            "name": "logAnalyticsWorkspace",
+            "workspaceResourceId": "/subscriptions/f568eda3-fb90-4ae1-bca7-a53136f06ba4/resourceGroups/AZM-SNow/providers/Microsoft.OperationalInsights/workspaces/LAW-AZM-SNOW-PERF-Med"
+          }
+        ]
+      },
+      "dataFlows": [
+        {
+            "streams": [
+                "Microsoft-InsightsMetrics"
+            ],
+            "destinations": [
+                "azureMonitorMetrics-default"
+            ]
+        },
+        {
+            "streams": [
+                "Microsoft-Perf"
+            ],
+            "destinations": [
+                "logAnalyticsWorkspace"
+            ]
+        }
+    ]
+    }
+  }

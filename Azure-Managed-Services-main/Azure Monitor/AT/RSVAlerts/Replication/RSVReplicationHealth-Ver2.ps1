@@ -1,0 +1,12 @@
+$subscriptionId=(Get-AzContext).Subscription.Id
+$dimension = New-AzScheduledQueryRuleDimensionObject -Name name_s -Operator Include -Value *
+$condition=New-AzScheduledQueryRuleConditionObject -Dimension $dimension -Query "AzureDiagnostics | where TimeGenerated > ago(24h) | where replicationProviderName_s == 'A2A' | where isnotempty(name_s) and isnotnull(name_s) | summarize hint.strategy=partitioned arg_max(TimeGenerated, *) by name_s | where replicationHealth_s == 'Critical' | project name_s, replicationHealth_s, replicationHealthErrors_s, Resource" -TimeAggregation "Count" -Operator "GreaterThan" -Threshold "0" -FailingPeriodNumberOfEvaluationPeriod 1 -FailingPeriodMinFailingPeriodsToAlert 1
+New-AzScheduledQueryRule -Name "RSV-test" -ResourceGroupName "909RG-PS-Tst" -Location "northcentralus" -DisplayName "RSV-test" -Scope "/subscriptions/8eb8179e-f405-4c23-8485-d943b95ec07d/resourceGroups/909RG-PS-Tst/providers/Microsoft.RecoveryServices/vaults/RSVTsT-last" -Severity 4 -WindowSize (New-TimeSpan -Days 1) -EvaluationFrequency (New-TimeSpan -Days 1) -CriterionAllOf $condition
+
+
+
+
+$subscriptionId=(Get-AzContext).Subscription.Id
+$dimension = New-AzScheduledQueryRuleDimensionObject -Name name_s -Operator Include -Value *
+$condition=New-AzScheduledQueryRuleConditionObject -Dimension $dimension -Query "AzureDiagnostics | where TimeGenerated > ago(24h) | where replicationProviderName_s == 'A2A' | where isnotempty(name_s) and isnotnull(name_s) | summarize hint.strategy=partitioned arg_max(TimeGenerated, *) by name_s | where replicationHealth_s == 'Critical' | project name_s, replicationHealth_s, replicationHealthErrors_s, Resource" -TimeAggregation "Count" -MetricMeasureColumn "AggregatedValue" -Operator "GreaterThan" -Threshold "70" -FailingPeriodNumberOfEvaluationPeriod 1 -FailingPeriodMinFailingPeriodsToAlert 1
+New-AzScheduledQueryRule -Name test-rule -ResourceGroupName test-group -Location eastus -DisplayName test-rule -Scope "/subscriptions/$subscriptionId/resourceGroups/test-group/providers/Microsoft.Compute/virtualMachines/test-vm" -Severity 4 -WindowSize ([System.TimeSpan]::New(0,10,0)) -EvaluationFrequency ([System.TimeSpan]::New(0,5,0)) -CriterionAllOf $condition

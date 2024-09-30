@@ -1,0 +1,9 @@
+{
+    "subscriptionId": "2a408414-5a6f-4da7-882b-4fb25a5e67ab",
+    "tagKey" : "AZM",
+    "tagValue" : "LAW",
+    "ClNm" : "Choice-Tec-Sol",
+    "resourceGroupName" : "AZM-Snow",
+    "actionGroupId" : "/subscriptions/2a408414-5a6f-4da7-882b-4fb25a5e67ab/resourceGroups/AZM-SNow/providers/microsoft.insights/actionGroups/AZM-Snow-Main",
+    "Location" : "East US"
+}
