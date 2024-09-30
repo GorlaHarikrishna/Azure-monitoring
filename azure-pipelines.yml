@@ -1,0 +1,13 @@
+trigger:
+- main  # Change this to your branch name
+
+pool:
+  vmImage: 'windows-latest'
+
+steps:
+- task: PowerShell@2
+  inputs:
+    filePath: 'C:\AZM Git\Azure-monitoring\Azure-Managed-Services-main\Azure Monitor\AT\VMAlerts'  # Path to your PowerShell script
+    arguments: '-YourArgument value'      # Optional: any arguments you want to pass
+    failOnStderr: true                     # Optional: fail the task if there's an error
+  displayName: 'Run PowerShell Script'
