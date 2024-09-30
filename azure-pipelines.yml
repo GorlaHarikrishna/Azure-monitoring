@@ -11,7 +11,7 @@ steps:
 # Run PowerShell script from the checked-out repository
 - task: PowerShell@2
   inputs:
-    filePath: 'C:\AZM Git\Azure-monitoring\Azure-Managed-Services-main\Azure Monitor\AT\VMAlerts\VMAlerts-Main.ps1'  # Path to your PowerShell script within the repo
+    filePath: 'Azure-Managed-Services-main\Azure Monitor\AT\VMAlerts\VMAlerts-Main.ps1'  # Path to your PowerShell script within the repo
     arguments: '-YourArgument value'      # Optional: arguments you want to pass
     failOnStderr: true                    # Fail the task if any errors occur
   displayName: 'Run PowerShell Script'
