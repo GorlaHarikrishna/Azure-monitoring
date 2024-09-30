@@ -1,0 +1,17 @@
+trigger:
+- main  # Trigger on the main branch; modify as needed
+
+pool:
+  vmImage: 'windows-latest'  # Use a Windows image to run PowerShell
+
+# Checkout your Git repository
+steps:
+- checkout: self  # This checks out the current repository containing your PowerShell script
+
+# Run PowerShell script from the checked-out repository
+- task: PowerShell@2
+  inputs:
+    filePath: 'C:\AZM Git\Azure-monitoring\Azure-Managed-Services-main\Azure Monitor\AT\VMAlerts\VMAlerts-Main.ps1'  # Path to your PowerShell script within the repo
+    arguments: '-YourArgument value'      # Optional: arguments you want to pass
+    failOnStderr: true                    # Fail the task if any errors occur
+  displayName: 'Run PowerShell Script'
