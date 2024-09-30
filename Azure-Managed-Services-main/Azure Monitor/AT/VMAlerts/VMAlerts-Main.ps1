@@ -3,16 +3,16 @@ param (
 )
 
 # Define the paths to your scripts
-$ExternalScriptPath1 = "C:\samples\AT\VMAlerts\VMAlertsSingle\Disk-Data Disk IOPS Consumed Percentage.ps1"
-$ExternalScriptPath2 = "C:\samples\AT\VMAlerts\VMAlertsSingle\Disk-OS Disk IOPS Consumed Percentage.ps1"
-$ExternalScriptPath3 = "C:\samples\AT\VMAlerts\VMAlertsSingle\Disk-Percentiles Free Space.ps1"
-$ExternalScriptPath4 = "C:\samples\AT\VMAlerts\VMAlertsSingle\Disk-Virtual Machines by Free Space MB.ps1"
-$ExternalScriptPath5 = "C:\samples\AT\VMAlerts\VMAlertsSingle\Memory-Percentiles Committed Bytes In Use.ps1"
-$ExternalScriptPath6 = "C:\samples\AT\VMAlerts\VMAlertsSingle\Memory-Virtual Machines by AvailableMB.ps1"
-$ExternalScriptPath7 = "C:\samples\AT\VMAlerts\VMAlertsSingle\Network-In Total.ps1"
-$ExternalScriptPath8 = "C:\samples\AT\VMAlerts\VMAlertsSingle\VM-Availability.ps1"
-$ExternalScriptPath9 = "C:\samples\AT\VMAlerts\VMAlertsSingle\VM-CPUByPercentiles.ps1"
-$ExternalScriptPath10 = "C:\samples\AT\VMAlerts\VMAlertsSingle\VM-SystemUpTime.ps1"
+$ExternalScriptPath1 = "C:\AZM Git\Azure-monitoring\Azure-Managed-Services-main\Azure Monitor\AT\VMAlerts\VMAlertsSingle\Disk-Data Disk IOPS Consumed Percentage.ps1"
+$ExternalScriptPath2 = "C:\AZM Git\Azure-monitoring\Azure-Managed-Services-main\Azure Monitor\AT\VMAlerts\VMAlertsSingle\Disk-OS Disk IOPS Consumed Percentage.ps1"
+$ExternalScriptPath3 = "C:\AZM Git\Azure-monitoring\Azure-Managed-Services-main\Azure Monitor\AT\VMAlerts\VMAlertsSingle\Disk-Percentiles Free Space.ps1"
+$ExternalScriptPath4 = "C:\AZM Git\Azure-monitoring\Azure-Managed-Services-main\Azure Monitor\AT\VMAlerts\VMAlertsSingle\Disk-Virtual Machines by Free Space MB.ps1"
+$ExternalScriptPath5 = "C:\AZM Git\Azure-monitoring\Azure-Managed-Services-main\Azure Monitor\AT\VMAlerts\VMAlertsSingle\Memory-Percentiles Committed Bytes In Use.ps1"
+$ExternalScriptPath6 = "C:\AZM Git\Azure-monitoring\Azure-Managed-Services-main\Azure Monitor\AT\VMAlerts\VMAlertsSingle\Memory-Virtual Machines by AvailableMB.ps1"
+$ExternalScriptPath7 = "C:\AZM Git\Azure-monitoring\Azure-Managed-Services-main\Azure Monitor\AT\VMAlerts\VMAlertsSingle\Network-In Total.ps1"
+$ExternalScriptPath8 = "C:\AZM Git\Azure-monitoring\Azure-Managed-Services-main\Azure Monitor\AT\VMAlerts\VMAlertsSingle\VM-Availability.ps1"
+$ExternalScriptPath9 = "C:\AZM Git\Azure-monitoring\Azure-Managed-Services-main\Azure Monitor\AT\VMAlerts\VMAlertsSingle\VM-CPUByPercentiles.ps1"
+$ExternalScriptPath10 = "C:\AZM Git\Azure-monitoring\Azure-Managed-Services-main\Azure Monitor\AT\VMAlerts\VMAlertsSingle\VM-SystemUpTime.ps1"
 
 # Load parameters from the parameter file
 $Parameters = Get-Content $ParameterFile | ConvertFrom-Json
