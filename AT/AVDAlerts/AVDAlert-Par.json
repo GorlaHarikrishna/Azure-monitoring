@@ -1,0 +1,9 @@
+{
+    "subscriptionId": "672368b4-ad27-40b4-a025-c8da230b7835",
+    "tagKey" : "AZM",
+    "tagValue" : "AVD",
+    "ClNm" : "Emphasys - Hosting - Production",
+    "resourceGroupName" : "AZM-Snow",
+    "actionGroupId" : "/subscriptions/672368b4-ad27-40b4-a025-c8da230b7835/resourceGroups/AZM-SNow/providers/microsoft.insights/actionGroups/AZM-Snow-Main-AVD",
+    "Location" : "East US"
+}
